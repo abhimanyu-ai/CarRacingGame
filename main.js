@@ -48,7 +48,7 @@ function my_keydown(e) {
         console.log("Left arrow key");
     }
     if (keyPressed == '39') {
-        car1_right();
+        car1_right(); 
         console.log("Right arrow key");
     }
     if (keyPressed == '87') {
@@ -66,5 +66,85 @@ function my_keydown(e) {
     if (keyPressed == '68') {
         car2_right();
         console.log("D key");
-    }
+	}
+	if (car1_x > 700) {
+		console.log("Red car won!");
+		document.getElementById('game_status').innerHTML="Red car won!";
+	}
+	if (car2_x > 700) {
+		console.log("Silver car won!");
+		document.getElementById('game_status').innerHTML="Silver car won!";
+	}
+}
+function car1_up() {
+	if (car1_y >=0) {
+		car1_y=car1_y-10;
+		console.log("When up arrow key is pressed, x=" + car1_x + "| y=" + car1_y);
+		uploadBackground();
+		uploadcar1();
+		uploadcar2();
+	}
+}
+function car1_down() {
+	if (car1_y <=500) {
+	car1_y=car1_y+10;
+	console.log("When down arrow key is pressed, x=" + car1_x, + "| y=" + car1_y);
+	uploadBackground();
+	uploadcar1();
+	uploadcar2();
+	}
+}
+function car1_left() {
+	if (car1_x >=0) {
+		car1_x=car1_x-10;
+		console.log("When left arrow key is pressed, x=" + car1_x + "| y=" + car1_y);
+		uploadBackground();
+		uploadcar1();
+		uploadcar2();
+	}
+}
+function car1_right() {
+	if (car1_x <=700) {
+		car1_x=car1_x+10;
+		console.log("When right arrow key is pressed, x=" + car1_x + "| y=" + car1_y);
+		uploadBackground();
+		uploadcar1();
+		uploadcar2();
+	}
+}
+function car2_up() {
+	if (car2_y >=0) {
+		car2_y=car2_y-10;
+		console.log("When W key is pressed, x=" + car2_x + "| y=" + car2_y);
+		uploadBackground();
+		uploadcar1();
+		uploadcar2();
+	}
+}
+function car2_down() {
+	if (car2_y <=500) {
+		car2_y=car2_y+10;
+		console.log("When S key is pressed, x=" + car2_x + "| y=" + car2_y);
+		uploadBackground();
+		uploadcar1();
+		uploadcar2();
+	}
+}
+function car2_left() {
+	if (car2_x >=0) {
+		car2_x=car2_x-10;
+		console.log("When A key is pressed, x=" + car2_x + "| y=" + car2_y);
+		uploadBackground();
+		uploadcar1();
+		uploadcar2();
+	}
+}
+function car2_right() {
+	if (car2_x <=700) {
+		car2_x=car2_x+10;
+		console.log("When D key is pressed, x=" + car2_x + "| y=" + car2_y);
+		uploadBackground();
+		uploadcar1();
+		uploadcar2();
+	}
 }
