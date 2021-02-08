@@ -71,7 +71,7 @@ function my_keydown(e) {
 		console.log("Red car won!");
 		document.getElementById('game_status').innerHTML="Red car won!";
 	}
-	if (car2_x > 700) {
+	else if (car2_x > 700) {
 		console.log("Silver car won!");
 		document.getElementById('game_status').innerHTML="Silver car won!";
 	}
